@@ -6,8 +6,16 @@
     <Authors>Charles d'Avernas</Authors>
     <Company>Neuroglia SPRL</Company>
     <Copyright>Copyright © 2020 - Neuroglia SPRL. All rights reserved</Copyright>
+    <Title>Neuroglia Istio</Title>
     <PackageTags>neuroglia, istio</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>A NET Standard 2.1 library which provides abstractions and implementations to interact with Istio thanks to the official C# Kurbernetes client</Description>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>logo_white.jpg</PackageIcon>
+    <PackageProjectUrl>https://github.com/neuroglia-io/Istio</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/neuroglia-io/Istio</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -16,6 +24,17 @@
 
   <ItemGroup>
     <PackageReference Include="Neuroglia.K8s" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\Users\User\Pictures\logo_white.jpg">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
