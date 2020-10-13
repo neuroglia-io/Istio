@@ -53,4 +53,4 @@
 
 # Contributing
 
-Please see [CONTRIBUTING.md](https://github.com/neuroglia-io/K8s/blob/master/CONTRIBUTING.md) for instructions on how to contribute.
+Please see [CONTRIBUTING.md](https://github.com/neuroglia-io/Istio/blob/master/CONTRIBUTING.md) for instructions on how to contribute.
