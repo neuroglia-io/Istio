@@ -4,7 +4,7 @@ Thanks for taking the time to join neuroglia.io community and start contributing
 
 ## Reporting an issue
 
-If you have a problem or a suggestion regarding the package, please file an [issue](https://github.com/neuroglia-io/K8s/issues)
+If you have a problem or a suggestion regarding the package, please file an [issue](https://github.com/neuroglia-io/Istio/issues)
 
 ## Contributing a patch
 
