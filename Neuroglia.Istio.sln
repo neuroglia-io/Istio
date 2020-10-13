@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{22B763C6-2B3C-4A44-A1C1-1928F6923616}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neuroglia.Istio", "src\Neuroglia.Istio\Neuroglia.Istio.csproj", "{CEB3D185-98C4-4FD5-816D-F6A0653056C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CEB3D185-98C4-4FD5-816D-F6A0653056C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEB3D185-98C4-4FD5-816D-F6A0653056C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEB3D185-98C4-4FD5-816D-F6A0653056C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEB3D185-98C4-4FD5-816D-F6A0653056C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CEB3D185-98C4-4FD5-816D-F6A0653056C9} = {22B763C6-2B3C-4A44-A1C1-1928F6923616}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40BF517D-2C13-45E7-BC9C-91EEA80716F8}
+	EndGlobalSection
+EndGlobal

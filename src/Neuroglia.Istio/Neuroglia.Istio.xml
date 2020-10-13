@@ -1,0 +1,675 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Neuroglia.Istio</name>
+    </assembly>
+    <members>
+        <member name="T:Neuroglia.Istio.IstioDefaults">
+            <summary>
+            Exposes constants about Istio defaults
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.IstioDefaults.ApiVersions">
+            <summary>
+            Exposes constants about Istio default API versions
+            </summary>
+        </member>
+        <member name="F:Neuroglia.Istio.IstioDefaults.ApiVersions.V1Alpha3">
+            <summary>
+            Gets the 'networking.istio.io/v1alpha3' API version
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.IstioDefaults.Resources">
+            <summary>
+            Exposes constants about Istio default CRDs
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.IstioDefaults.Resources.Kinds">
+            <summary>
+            Exposes constants about Istio default CRD kinds
+            </summary>
+        </member>
+        <member name="F:Neuroglia.Istio.IstioDefaults.Resources.Kinds.VirtualService">
+            <summary>
+            Gets the kind of the 'VirtualService' object
+            </summary>
+        </member>
+        <member name="F:Neuroglia.Istio.IstioDefaults.Resources.VirtualService">
+            <summary>
+            Gets the <see cref="T:Neuroglia.Istio.Resources.VirtualService"/> CRD
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.Resources.Abort">
+            <summary>
+            Represents the <see href="https://istio.io/latest/docs/reference/config/networking/virtual-service/#HTTPFaultInjection-Abort">abort specification</see>, which is used to prematurely abort a request with a pre-specified error code. 
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.Abort.HttpStatus">
+            <summary>
+            Gets/sets the HTTP status code to use to abort the Http request
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.Abort.Percentage">
+            <summary>
+            Gets/sets the percentage of requests to be aborted with the error code provided
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.Resources.CorsPolicy">
+            <summary>
+            Rezpresents the <see href="https://istio.io/latest/docs/reference/config/networking/virtual-service/#CorsPolicy">CORS policy specification</see>, which describes the Cross-Origin Resource Sharing (CORS) policy, for a given service. Refer to CORS for further details about cross origin resource sharing.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.CorsPolicy.AllowOrigins">
+            <summary>
+            Gets/sets string patterns that match allowed origins. An origin is allowed if any of the string matchers match. If a match is found, then the outgoing Access-Control-Allow-Origin would be set to the origin as provided by the client.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.CorsPolicy.AllowMethods">
+            <summary>
+            Gets/sets an <see cref="T:System.Collections.Generic.IList`1"/> of HTTP methods allowed to access the resource. The content will be serialized into the Access-Control-Allow-Methods header.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.CorsPolicy.AllowHeaders">
+            <summary>
+            Gets/sets an <see cref="T:System.Collections.Generic.IList`1"/> of HTTP headers that can be used when requesting the resource. Serialized to Access-Control-Allow-Headers header.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.CorsPolicy.ExposeHeaders">
+            <summary>
+            Gets/sets an <see cref="T:System.Collections.Generic.IList`1"/> of HTTP headers that the browsers are allowed to access. Serialized into Access-Control-Expose-Headers header.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.CorsPolicy.MaxAge">
+            <summary>
+            Gets/sets a value which specifies how long the results of a preflight request can be cached. Translates to the Access-Control-Max-Age header.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.CorsPolicy.AllowCredentials">
+            <summary>
+            Gets/sets a boolean indicating whether the caller is allowed to send the actual request (not the preflight) using credentials. Translates to Access-Control-Allow-Credentials header.
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.Resources.Delay">
+            <summary>
+            Represents the <see href="https://istio.io/latest/docs/reference/config/networking/virtual-service/#HTTPFaultInjection-Delay">delay specification</see>, which is used to inject latency into the request forwarding path. 
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.Delay.FixedDelay">
+            <summary>
+            Gets/sets a fixed delay before forwarding the request. Format: 1h/1m/1s/1ms. MUST be >=1ms. 
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.Delay.Percentage">
+            <summary>
+            Gets/sets the percentage of requests on which the delay will be injected.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.Delay.Percent">
+            <summary>
+            Gets/sets the percentage of requests on which the delay will be injected (0-100).
+            </summary>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.Delay.Validate">
+            <summary>
+            Validates the specification
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.Resources.Delegate">
+            <summary>
+            Represents the <see href="https://istio.io/latest/docs/reference/config/networking/virtual-service/#Delegate">delegate specification</see>, which describes the delegate VirtualService.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.Delegate.Name">
+            <summary>
+            Gets/sets the name of the delegate VirtualService.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.Delegate.NamespaceProperty">
+            <summary>
+            Gets/sets the namespace where the delegate VirtualService resides. By default, it is same to the root’s.
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.Resources.Destination">
+            <summary>
+            Represents the <see href="https://istio.io/latest/docs/reference/config/networking/virtual-service/#Destination">destination spec</see>, which indicates the network addressable service to which the request/connection will be sent after processing a routing rule. 
+            The destination.host should unambiguously refer to a service in the service registry. Istio’s service registry is composed of all the services found in the platform’s service registry (e.g., Kubernetes services, Consul services), as well as services declared through the ServiceEntry resource.
+            </summary>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.Destination.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Neuroglia.Istio.Resources.Destination"/>
+            </summary>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.Destination.#ctor(System.String,System.String,Neuroglia.Istio.Resources.PortSelector)">
+            <summary>
+            Initializes a new <see cref="T:Neuroglia.Istio.Resources.Destination"/>
+            </summary>
+            <param name="host">The name of a service from the service registry</param>
+            <param name="subset">The name of a subset within the service</param>
+            <param name="port">The port on the host that is being addressed</param>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.Destination.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new <see cref="T:Neuroglia.Istio.Resources.Destination"/>
+            </summary>
+            <param name="host">The name of a service from the service registry</param>
+            <param name="subset">The name of a subset within the service</param>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.Destination.#ctor(System.String)">
+            <summary>
+            Initializes a new <see cref="T:Neuroglia.Istio.Resources.Destination"/>
+            </summary>
+            <param name="host">The name of a service from the service registry</param>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.Destination.Host">
+            <summary>
+            Gets/sets the name of a service from the service registry. Service names are looked up from the platform’s service registry (e.g., Kubernetes services, Consul services, etc.) and from the hosts declared by ServiceEntry. 
+            Traffic forwarded to destinations that are not found in either of the two, will be dropped.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.Destination.Subset">
+            <summary>
+            Gets/sets the name of a subset within the service. Applicable only to services within the mesh. The subset must be defined in a corresponding DestinationRule.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.Destination.Port">
+            <summary>
+            Gets/sets the port on the host that is being addressed. If a service exposes only a single port it is not required to explicitly select the port.
+            </summary>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.Destination.Validate">
+            <summary>
+            Validates the specification
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.Resources.Headers">
+            <summary>
+            Represents the <see href="https://istio.io/latest/docs/reference/config/networking/virtual-service/#Headers">headers specification</see>, used to manipulate headers when Envoy forwards requests to, or responses from, a destination service. Header manipulation rules can be specified for a specific route destination or for all destinations. 
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.Headers.Request">
+            <summary>
+            Gets/sets the header manipulation rules to apply before forwarding a request to the destination service
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.Headers.Response">
+            <summary>
+            Gets/sets the manipulation rules to apply before returning a response to the caller
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.Resources.HeadersOperations">
+            <summary>
+            Represents the <see href=""></see>
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HeadersOperations.Set">
+            <summary>
+            Gets/sets the mapping of the headers to overwrite
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HeadersOperations.Add">
+            <summary>
+            Gets/sets the key/value pairs to append (will create a comma-separated list of values)
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HeadersOperations.Remove">
+            <summary>
+            Gets/sets the headers to remove
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.Resources.HttpFaultInjection">
+            <summary>
+            Represents the <see href="https://istio.io/latest/docs/reference/config/networking/virtual-service/#HTTPFaultInjection">HTTPFaultInjection specification</see>, which can be used to specify one or more faults to inject while forwarding HTTP requests to the destination specified in a route. 
+            Fault specification is part of a VirtualService rule. Faults include aborting the Http request from downstream service, and/or delaying proxying of requests. A fault rule MUST HAVE delay or abort or both.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpFaultInjection.Delay">
+            <summary>
+            Gets/sets the 
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpFaultInjection.Abort">
+            <summary>
+            Gets/sets the 
+            </summary>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.HttpFaultInjection.Validate">
+            <summary>
+            Validates the specification
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.Resources.HttpMatchRequest">
+            <summary>
+            Represents the <see href="https://istio.io/latest/docs/reference/config/networking/virtual-service/#HTTPMatchRequest">HttpMatchRequest specification</see>, used to specify a set of criterion to be met in order for the rule to be applied to the HTTP request.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpMatchRequest.Name">
+            <summary>
+            Gets/sets the name assigned to a match. The match’s name will be concatenated with the parent route’s name and will be logged in the access logs for requests matching this route.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpMatchRequest.Uri">
+            <summary>
+            Gets/sets the case-sensitive uri to match<para></para>
+            NOTES: Note: Case-insensitive matching could be enabled via the <see cref="P:Neuroglia.Istio.Resources.HttpMatchRequest.IgnoreUriCase"/> flag.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpMatchRequest.Scheme">
+            <summary>
+            Gets/sets the case-sensitive scheme to match
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpMatchRequest.Method">
+            <summary>
+            Gets/sets the case-sensitive method to match
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpMatchRequest.Authority">
+            <summary>
+            Gets/sets the case-sensitive authority to match
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpMatchRequest.Headers">
+            <summary>
+            Gets/sets the headers to match. The header keys must be lowercase and use hyphen as the separator, e.g. x-request-id.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpMatchRequest.Port">
+            <summary>
+            Gets/sets the ports on the host that is being addressed. Many services only expose a single port or label ports with the protocols they support, in these cases it is not required to explicitly select the port
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpMatchRequest.SourceLabels">
+            <summary>
+            Gets/sets one or more labels that constrain the applicability of a rule to workloads with the given labels. If the VirtualService has a list of gateways specified in the top-level gateways field, it must include the reserved gateway mesh for this field to be applicable.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpMatchRequest.Gateways">
+            <summary>
+            Gets/sets names of gateways where the rule should be applied. Gateway names in the top-level gateways field of the VirtualService (if any) are overridden. The gateway match is independent of sourceLabels.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpMatchRequest.QueryParams">
+            <summary>
+            Gets/sets query parameters to match.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpMatchRequest.IgnoreUriCase">
+            <summary>
+            Gets/sets a flag to specify whether the URI matching should be case-insensitive.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpMatchRequest.WithoutHeaders">
+            <summary>
+            Gets/sets the headers not to match. The header keys must be lowercase and use hyphen as the separator, e.g. x-request-id.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpMatchRequest.SourceNamespace">
+            <summary>
+            Gets/sets the source namespace constraining the applicability of a rule to workloads in that namespace. If the VirtualService has a list of gateways specified in the top-level gateways field, it must include the reserved gateway mesh for this field to be applicable.
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.Resources.HttpRedirect">
+            <summary>
+            Represents the <see href="https://istio.io/latest/docs/reference/config/networking/virtual-service/#HTTPRedirect">http redirect specification</see>, which is used to send a 301 redirect response to the caller, where the Authority/Host and the URI in the response can be swapped with the specified values.
+            </summary>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.HttpRedirect.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Neuroglia.Istio.Resources.HttpRedirect"/>
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRedirect.Uri">
+            <summary>
+            Gets/sets the value used to overwrite the Path portion of the URL. Note that the entire path will be replaced, irrespective of the request URI being matched as an exact path or prefix.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRedirect.Authority">
+            <summary>
+            Gets/sets the value used to overwrite the Authority/Host portion of the URL.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRedirect.RedirectCode">
+            <summary>
+            Gets/sets the http status code to use in the redirect response. The default response code is MOVED_PERMANENTLY (301).
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.Resources.HttpRetry">
+            <summary>
+            Represents the <see href="https://istio.io/latest/docs/reference/config/networking/virtual-service/#HTTPRetry">http retry specification</see>, used when a HTTP request fails.
+            </summary>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.HttpRetry.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Neuroglia.Istio.Resources.HttpRetry"/>
+            </summary>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.HttpRetry.#ctor(System.Int32,System.String,System.String,System.Boolean)">
+            <summary>
+            Initializes a new <see cref="T:Neuroglia.Istio.Resources.HttpRetry"/>
+            </summary>
+            <param name="attempts">The number of retries for a given request.</param>
+            <param name="perRetryTimeout">The timeout per retry attempt for a given request. </param>
+            <param name="retryOn">The conditions under which retry takes place.</param>
+            <param name="retryRemoveLocalities">The flag to specify whether the retries should retry to other localities</param>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.HttpRetry.#ctor(System.Int32,System.String,System.String)">
+            <summary>
+            Initializes a new <see cref="T:Neuroglia.Istio.Resources.HttpRetry"/>
+            </summary>
+            <param name="attempts">The number of retries for a given request.</param>
+            <param name="perRetryTimeout">The timeout per retry attempt for a given request. </param>
+            <param name="retryOn">The conditions under which retry takes place.</param>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.HttpRetry.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new <see cref="T:Neuroglia.Istio.Resources.HttpRetry"/>
+            </summary>
+            <param name="attempts">The number of retries for a given request.</param>
+            <param name="perRetryTimeout">The timeout per retry attempt for a given request. </param>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.HttpRetry.#ctor(System.Int32)">
+            <summary>
+            Initializes a new <see cref="T:Neuroglia.Istio.Resources.HttpRetry"/>
+            </summary>
+            <param name="attempts">The number of retries for a given request.</param>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRetry.Attempts">
+            <summary>
+            Gets/sets the number of retries for a given request. The interval between retries will be determined automatically (25ms+). Actual number of retries attempted depends on the request timeout of the HTTP route.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRetry.PerTryTimeout">
+            <summary>
+            Gets/sets the imeout per retry attempt for a given request. format: 1h/1m/1s/1ms. MUST BE >=1ms.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRetry.RetryOn">
+            <summary>
+            Gets/sets the conditions under which retry takes place. One or more policies can be specified using a ‘,’ delimited list. See the retry policies and gRPC retry policies for more details.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRetry.RetryRemoteLocalities">
+            <summary>
+            Gets/sets the flag to specify whether the retries should retry to other localities. See the retry plugin configuration for more details.
+            </summary>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.HttpRetry.Validate">
+            <summary>
+            Validates the specification
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.Resources.HttpRewrite">
+            <summary>
+            Represents the <see href="https://istio.io/latest/docs/reference/config/networking/virtual-service/#HTTPRewrite">http rewrite specification</see>, which can be used to rewrite specific parts of a HTTP request before forwarding the request to the destination. Rewrite primitive can be used only with HTTPRouteDestination.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRewrite.Uri">
+            <summary>
+            Gets/sets the value used to rewrite the path (or the prefix) portion of the URI. If the original URI was matched based on prefix, the value provided in this field will replace the corresponding matched prefix.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRewrite.Authority">
+            <summary>
+            Gets/sets the value used to rewrite the Authority/Host header.
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.Resources.HttpRoute">
+            <summary>
+            Represents the <see href="https://istio.io/latest/docs/reference/config/networking/virtual-service/#HTTPRoute">http route specification</see>, which is used to match conditions and actions for routing HTTP/1.1, HTTP2, and gRPC traffic.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRoute.Name">
+            <summary>
+            Gets/sets the name assigned to the route for debugging purposes. The route’s name will be concatenated with the match’s name and will be logged in the access logs for requests matching this route/match.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRoute.Match">
+            <summary>
+            Gets/sets the match conditions to be satisfied for the rule to be activated. All conditions inside a single match block have AND semantics, while the list of match blocks have OR semantics. The rule is matched if any one of the match blocks succeed.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRoute.Route">
+            <summary>
+            Gets/sets the HTTP rule can either redirect or forward (default) traffic. The forwarding target can be one of several versions of a service (see glossary in beginning of document). Weights associated with the service version determine the proportion of traffic it receives.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRoute.Redirect">
+            <summary>
+            Gets/sets the primitive used to send a HTTP 301 redirect to a different URI or Authority.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRoute.Delegate">
+            <summary>
+            Gets/sets the primitive used to specify the particular VirtualService which can be used to define delegate HTTPRoute. It can be set only when <see cref="P:Neuroglia.Istio.Resources.HttpRoute.Route"/> and <see cref="P:Neuroglia.Istio.Resources.HttpRoute.Redirect"/> are empty, and the route rules of the delegate VirtualService will be merged with that in the current one. 
+            <para>NOTES:</para>
+            <para>1. Only one level delegation is supported.</para>
+            <para>2. The delegate’s HTTPMatchRequest must be a strict subset of the root’s, otherwise there is a conflict and the HTTPRoute will not take effect.</para> 
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRoute.Rewrite">
+            <summary>
+            Gets/sets the primitive used to configure the way HTTP URIs and Authority headers are rewritten. Rewrite cannot be used with <see cref="P:Neuroglia.Istio.Resources.HttpRoute.Redirect"/> primitive. Rewrite will be performed before forwarding.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRoute.Timeout">
+            <summary>
+            Gets/sets the timeout for HTTP requests. Disabled by default
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRoute.Retries">
+            <summary>
+            Gets/sets the retry policy for HTTP requests.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRoute.Fault">
+            <summary>
+            Gets/sets the policy to apply on HTTP traffic at the client side. Note that timeouts or retries will not be enabled when faults are enabled on the client side.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRoute.Mirror">
+            <summary>
+            Gets/sets the primitive used to mirror HTTP traffic to a another destination in addition to forwarding the requests to the intended destination. 
+            Mirrored traffic is on a best effort basis where the sidecar/gateway will not wait for the mirrored cluster to respond before returning the response from the original destination. Statistics will be generated for the mirrored destination.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRoute.MirrorPercentage">
+            <summary>
+            Gets/sets the percentage of the traffic to be mirrored by the mirror field. If this field is absent, all the traffic (100%) will be mirrored. Max value is 100.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRoute.CorsPolicy">
+            <summary>
+            Gets/sets the Cross-Origin Resource Sharing policy (CORS). Refer to CORS for further details about cross origin resource sharing.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRoute.Headers">
+            <summary>
+            Gets/sets header manipulation rules.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRoute.MirrorPercent">
+            <summary>
+            Gets/sets the percentage of the traffic to be mirrored by the mirror field.
+            </summary>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.HttpRoute.Validate">
+            <summary>
+            Validates the specification
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.Resources.HttpRouteDestination">
+            <summary>
+            Represents the <see href="https://istio.io/latest/docs/reference/config/networking/virtual-service/#HTTPRouteDestination">routing rule specification</see>, which is associated with one or more service versions (see glossary in beginning of document). Weights associated with the version determine the proportion of traffic it receives.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRouteDestination.Destination">
+            <summary>
+            Gets/sets the destination uniquely identifies the instances of a service to which the request/connection should be forwarded to.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRouteDestination.Weight">
+            <summary>
+            Gets/sets the proportion of traffic to be forwarded to the service version. (0-100). Sum of weights across destinations SHOULD BE == 100. If there is only one destination in a rule, the weight value is assumed to be 100.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.HttpRouteDestination.Headers">
+            <summary>
+            Gets/sets header manipulation rules
+            </summary>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.HttpRouteDestination.Validate">
+            <summary>
+            Validates the specification
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.Resources.Percent">
+            <summary>
+            Represents the <see href="https://istio.io/latest/docs/reference/config/networking/virtual-service/#Percent">percent</see> specification, which specifies a percentage in the range of [0.0, 100.0].
+            </summary>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.Percent.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Neuroglia.Istio.Resources.Percent"/>
+            </summary>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.Percent.#ctor(System.Double)">
+            <summary>
+            Initializes a new <see cref="T:Neuroglia.Istio.Resources.Percent"/>
+            </summary>
+            <param name="value">The percentage's value</param>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.Percent.Value">
+            <summary>
+            Gets/sets the percentage's value
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.Resources.PortSelector">
+            <summary>
+            Represents the <see href="https://istio.io/latest/docs/reference/config/networking/virtual-service/#PortSelector">port selector spec</see>, which specifies the number of a port to be used for matching or selection for final routing.
+            </summary>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.PortSelector.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Neuroglia.Istio.Resources.PortSelector"/>
+            </summary>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.PortSelector.#ctor(System.Int32)">
+            <summary>
+            Initializes a new <see cref="T:Neuroglia.Istio.Resources.PortSelector"/>
+            </summary>
+            <param name="number">The port number</param>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.PortSelector.Number">
+            <summary>
+            Gets/sets the port number
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.Resources.StringMatch">
+            <summary>
+            Represents the <see href="https://istio.io/latest/docs/reference/config/networking/virtual-service/#StringMatch">string match specification</see>, which describes how to match a given string in HTTP headers. Match is case-sensitive.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.StringMatch.Exact">
+            <summary>
+            Gets/sets the exact string match
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.StringMatch.Prefix">
+            <summary>
+            Gets/sets the prefix-based match
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.StringMatch.Regex">
+            <summary>
+            Gets/sets the RE2 style regex-based match (<see href="https://github.com/google/re2/wiki/Syntax"/>)
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.Resources.VirtualService">
+            <summary>
+            Represents the <see href="https://istio.io/latest/docs/reference/config/networking/virtual-service/">virtual service specification</see>, which is a configuration affecting traffic routing.
+            </summary>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.VirtualService.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Neuroglia.Istio.Resources.VirtualService"/>
+            </summary>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.VirtualService.#ctor(k8s.Models.V1ObjectMeta,Neuroglia.Istio.Resources.VirtualServiceSpec)">
+            <summary>
+            Initializes a new <see cref="T:Neuroglia.Istio.Resources.VirtualService"/>
+            </summary>
+            <param name="metadata">The <see cref="T:Neuroglia.Istio.Resources.VirtualService"/>'s <see cref="T:k8s.Models.V1ObjectMeta"/></param>
+            <param name="spec">The <see cref="T:Neuroglia.Istio.Resources.VirtualService"/>'s <see cref="T:Neuroglia.Istio.Resources.VirtualServiceSpec"/></param>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.VirtualService.#ctor(k8s.Models.V1ObjectMeta)">
+            <summary>
+            Initializes a new <see cref="T:Neuroglia.Istio.Resources.VirtualService"/>
+            </summary>
+            <param name="metadata">The <see cref="T:Neuroglia.Istio.Resources.VirtualService"/>'s <see cref="T:k8s.Models.V1ObjectMeta"/></param>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.VirtualService.#ctor(Neuroglia.Istio.Resources.VirtualServiceSpec)">
+            <summary>
+            Initializes a new <see cref="T:Neuroglia.Istio.Resources.VirtualService"/>
+            </summary>
+            <param name="spec">The <see cref="T:Neuroglia.Istio.Resources.VirtualService"/>'s <see cref="T:Neuroglia.Istio.Resources.VirtualServiceSpec"/></param>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.VirtualService.Validate">
+            <inheritdoc/>
+        </member>
+        <member name="T:Neuroglia.Istio.Resources.VirtualServiceDefinition">
+            <summary>
+            Represents the definition of the <see cref="T:Neuroglia.Istio.Resources.VirtualService"/> custom resource
+            </summary>
+        </member>
+        <member name="F:Neuroglia.Istio.Resources.VirtualServiceDefinition.KIND">
+            <summary>
+            Gets the <see cref="T:Neuroglia.Istio.Resources.VirtualServiceDefinition"/>'s kind
+            </summary>
+        </member>
+        <member name="F:Neuroglia.Istio.Resources.VirtualServiceDefinition.PLURAL">
+            <summary>
+            Gets the <see cref="T:Neuroglia.Istio.Resources.VirtualServiceDefinition"/>'s plural
+            </summary>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.VirtualServiceDefinition.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Neuroglia.Istio.Resources.VirtualServiceDefinition"/>
+            </summary>
+        </member>
+        <member name="T:Neuroglia.Istio.Resources.VirtualServiceSpec">
+            <summary>
+            Represents the specification of a <see cref="T:Neuroglia.Istio.Resources.VirtualService"/>
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.VirtualServiceSpec.Hosts">
+            <summary>
+            Gets/sets the destination hosts to which traffic is being sent. Could be a DNS name with wildcard prefix or an IP address.
+            Depending on the platform, short-names can also be used instead of a FQDN (i.e. has no dots in the name). In such a scenario, the FQDN of the host would be derived based on the underlying platform.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.VirtualServiceSpec.Gateways">
+            <summary>
+            Gets/sets the names of gateways and sidecars that should apply these routes.
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.VirtualServiceSpec.Http">
+            <summary>
+            Gets/sets an ordered <see cref="T:System.Collections.Generic.IList`1"/> of route rules for HTTP traffic. 
+            <para>HTTP routes will be applied to platform service ports named ‘http-’/‘http2-’/‘grpc-*’, gateway ports with protocol HTTP/HTTP2/GRPC/ TLS-terminated-HTTPS and service entry ports using HTTP/HTTP2/GRPC protocols. </para>
+            <para>The first rule matching an incoming request is used.</para>
+            </summary>
+        </member>
+        <member name="P:Neuroglia.Istio.Resources.VirtualServiceSpec.ExportTo">
+            <summary>
+            Gets/sets an <see cref="T:System.Collections.Generic.IList`1"/> of namespaces to which this <see cref="T:Neuroglia.Istio.Resources.VirtualService"/> is exported. 
+            Exporting a <see cref="T:Neuroglia.Istio.Resources.VirtualService"/> allows it to be used by sidecars and gateways defined in other namespaces. This feature provides a mechanism for service owners and mesh administrators to control the visibility of <see cref="T:Neuroglia.Istio.Resources.VirtualService"/>s across namespace boundaries.
+            </summary>
+        </member>
+        <member name="M:Neuroglia.Istio.Resources.VirtualServiceSpec.Validate">
+            <summary>
+            Validates the specification
+            </summary>
+        </member>
+    </members>
+</doc>
